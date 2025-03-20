@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     text-align: end;
+    justify-content: center;
     flex-wrap: wrap;
     width: 100%;
 }
@@ -15,6 +16,15 @@
     padding: 1rem;
     margin: 1rem;
     width: 25%;
+}
+
+.card-why {
+    font-size: 3rem;
+    font-weight: bold;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 2rem;
 }
 
 li {
