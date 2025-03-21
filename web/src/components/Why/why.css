@@ -1,11 +1,9 @@
 .why {
-    margin: 10rem 0;
     display: flex;
-    justify-content: center;
-    text-align: end;
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
+    gap: 2rem;
 }
 
 .card {
@@ -13,23 +11,19 @@
     background-color: #03181D;
     border-radius: 2rem;
     padding: 2rem;
-    margin: 1rem;
     width: 25%;
 }
 .card span {
     position: absolute;
     right: 1rem;
     top: 1rem;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 .card-why {
+    background-color: inherit;
     font-size: 3rem;
     font-weight: bold;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    top: 2rem;
 }
 
 li {
@@ -47,4 +41,10 @@ li {
 .card-description {
     color: lightgray;
     margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: 100%;
+    }   
 }

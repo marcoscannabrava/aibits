@@ -12,8 +12,8 @@ const features = [
 const Why: React.FC = () => {
   return (
     <section className="why" id="why">
-      <ul className="card">
-        <li className="card-why">Why</li>
+      <ul className="card card-why">
+        <li>Why</li>
       </ul>
 
       {features.map((feature, index) => (
