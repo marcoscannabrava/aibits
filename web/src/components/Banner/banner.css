@@ -1,0 +1,47 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+.banner img {
+    max-width: 100%;
+}
+
+.description{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 0;
+}
+
+.main-text {
+    font-size: 2rem;
+    font-weight: 400;
+    display: flex;
+    text-align: center;
+}
+
+.subtitle {
+    margin-top: 3rem;
+    font-size: 1.2rem;
+}
+
+.functional{
+    background: var(--saffron);
+    background: var(--gradient-saffron-crayon);
+    background-clip: text;
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    font-size: 1.2rem;
+
+}
+
+@media screen and (max-width: 768px) {
+    .banner {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}

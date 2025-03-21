@@ -1,0 +1,56 @@
+.hero {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+.hero span {
+    background: var(--gradient-saffron-crayon);
+    background-clip: text;
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+}
+
+.logo {
+    width: max-content;
+    height: max-content;
+    margin: auto;
+    position: relative;
+    background: var(--saffron);
+    background: var(--gradient-saffron-crayon);
+    background-clip: text;
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+}
+.logo .logo-text {
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    -webkit-text-stroke: 4px black;
+    -webkit-text-fill-color: white;
+    font-size: 60px;
+}
+
+.hero p {
+    font-size: 3rem;
+}
+
+.hero img {
+    width: 100%;
+    width: 250px;
+    height: 240px;;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .hero {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+    
+    .hero p {
+        font-size: 2.5rem;
+    }    
+}
