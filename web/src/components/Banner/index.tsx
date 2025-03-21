@@ -1,8 +1,8 @@
 import React from "react";
-import "./introduction.css";
+import "./banner.css";
 import logo from "/src/assets/logo.png";
 
-const Introduction: React.FC = () => {
+const Banner: React.FC = () => {
   return (
     <div className="introduction">
       <img src={logo} alt="AI bits Logo" />
@@ -14,4 +14,4 @@ const Introduction: React.FC = () => {
   );
 };
 
-export default Introduction;
+export default Banner;

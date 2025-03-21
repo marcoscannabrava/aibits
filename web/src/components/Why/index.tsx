@@ -7,9 +7,9 @@ import flexible from "/src/assets/flexible.png";
 import open from "/src/assets/open.png";
 
 const features = [
-  { title: "Reliable", description: "Built on proven Unix principles", image: reliable },
+  { title: "Reliable", description: "Built on battle-tested, timeless Unix principles", image: reliable },
   { title: "Fast", description: "From prototype to production in minutes", image: fast },
-  { title: "Cost-effective", description: "Pay only for what you use", image: cost },
+  { title: "Ecosystem", description: "Stand on the shoulders of giants", image: cost },
   { title: "Flexible", description: "Use anywhere, scale anytime", image: flexible },
   { title: "Open", description: "No vendor lock-in, full transparency", image: open },
 ];
