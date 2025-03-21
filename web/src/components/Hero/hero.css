@@ -2,6 +2,7 @@
     width: 100%;
     margin: auto;
     text-align: center;
+    margin-top: 5rem;
     margin-bottom: 5rem;
 }
 .hero span {
@@ -39,20 +40,17 @@
     width: 100%;
     width: 250px;
     height: 240px;;
-    padding-top: 10rem;
 }
 
 
 
 @media screen and (max-width: 768px) {
-    .hero p {
-        font-size: 2rem;
-        top: -2rem;
-    }
-
-    .hero img {
-        position: relative;
-        top: -2.5rem;
+    .hero {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
     }
     
+    .hero p {
+        font-size: 2.5rem;
+    }    
 }
