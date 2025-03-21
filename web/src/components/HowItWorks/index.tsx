@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./howItWorks.css";
 
 const HowItWorks: React.FC = () => {
@@ -6,17 +6,8 @@ const HowItWorks: React.FC = () => {
     "curl example.com | lm --summary > summary.md",
     "lm --tags < summary.md",
     "lm --generate-image < summary.md",
-    "curl example.com/image.jpg | cv --explain >> summary.md",
+    "curl example.com/img.jpg | cv --explain >> summary.md",
   ];
-
-  useEffect(() => {
-    const commandLines = document.querySelectorAll(".command-line");
-    commandLines.forEach((commandLine, index) => {
-      setInterval(() => {
-        commandLine.classList.remove("hidden");
-      }, 2000 * index);
-    });
-  }, []);
 
   return (
     <section className="how-it-works">
@@ -28,10 +19,10 @@ const HowItWorks: React.FC = () => {
           <div className="terminal-button green"></div>
         </div>
         <div className="terminal-content">
+          <p className="prompt">$ </p>
           {commands.map((cmd, index) => (
-            <div key={index} className="command-line hidden">
-              <span className="prompt">$ </span>
-              <span className="command typing">{cmd}</span>
+            <div key={index} className="command-line typewriter">
+              <p className="command">{cmd}</p>
             </div>
           ))}
         </div>
