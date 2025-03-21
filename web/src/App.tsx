@@ -1,17 +1,17 @@
 import Header from './components/Header'
+import Hero from './components/Hero'
 import Banner from './components/Banner'
-import Resume from './components/Resume'
 import Why from './components/Why'
-import './App.css'
+import './index.css'
 
 function App() {
   return (
-    <>
-    <Header />
-    <Banner />
-    <Resume/>
-    <Why/>
-    </>
+    <main className='ubuntu-regular'>
+      <Header />
+      <Hero />
+      <Banner/>
+      <Why/>
+    </main>
   )
 }
 
