@@ -55,5 +55,11 @@
 :root {
   background-color: #121315;
   color: white;
+  
+  /* palette */
   --gradient-saffron-crayon: linear-gradient(90deg, rgba(249,199,79,1), rgba(243,114,44,1));
+  --midnight-green: #1b5169;
+  --persian-green: #2a9d8f;
+  --saffron: #f9c74f;
+  --orange-crayola: #f3722c;
 }

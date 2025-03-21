@@ -17,7 +17,7 @@
     height: max-content;
     margin: auto;
     position: relative;
-    background: rgb(249,199,79);
+    background: var(--saffron);
     background: var(--gradient-saffron-crayon);
     background-clip: text;
     -webkit-background-clip: text; 

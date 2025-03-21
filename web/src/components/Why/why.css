@@ -45,6 +45,6 @@ li {
 }
 
 .card-description {
-    color: rgb(155, 155, 155);
+    color: lightgray;
     margin-bottom: 3rem;
 }
