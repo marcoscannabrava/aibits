@@ -10,10 +10,6 @@
 .how-it-works h2 {
   font-size: 3rem;
   margin-bottom: 2rem;
-  background: var(--gradient-saffron-crayon);
-  background-clip: text;
-  -webkit-background-clip: text; 
-  -webkit-text-fill-color: transparent;
 }
 
 .terminal {
@@ -21,7 +17,7 @@
   border-radius: 0.5rem;
   padding: 1.5rem;
   width: 80%;
-  max-width: 600px;
+  max-width: 800px;
   text-align: left;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   position: relative;
@@ -61,13 +57,19 @@
 
 .terminal-content {
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
   font-family: monospace;
   color: white;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   font-size: 1.2rem;
   line-height: 1.5;
+}
+
+.command-line {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .prompt {
@@ -81,29 +83,37 @@
   display: inline-block;
 }
 
-/* fix */
-.command::after {
-  content: "";
-  position: absolute;
-  right: -0.5rem;
-  top: 0;
-  height: 100%;
-  width: 0.5rem;
-  background-color: white;
-  animation: blink 2s step-end infinite;
-}
-
 .typing {
   overflow: hidden;
   white-space: nowrap;
   width: 0;
-  animation: typing 3s steps(20) 3s infinite;
+  animation: none;
+  position: relative;
+}
+
+.typing {
+  animation: typing 3s steps(30);
+  animation-fill-mode: forwards;
+}
+
+.hidden {
+  display: none;
+}
+
+.typing::after {
+  content: "";
+  position: absolute;
+  right: -2px;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background-color: white;
+  animation: blink 1s step-end infinite;
 }
 
 @keyframes typing {
-  0% { width: 0 }
-  60% { width: 100% }
-  100% { width: 0 }
+  from { width: 0 }
+  to { width: 100% }
 }
 
 @keyframes blink {
@@ -117,7 +127,7 @@
   }
   
   .terminal-content {
-    font-size: 1rem;
+    font-size: .6rem;
   }
   
   .how-it-works h2 {
