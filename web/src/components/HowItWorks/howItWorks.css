@@ -91,6 +91,10 @@
 }
 
 @media screen and (max-width: 768px) {  
+  .how-it-works {
+    margin: 2rem auto;
+  }
+  
   .terminal {
     padding: 1rem;
     width: 90%;
