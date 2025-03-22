@@ -19,7 +19,7 @@ const HowItWorks: React.FC = () => {
   }, [visibleIndex]);
 
   return (
-    <section className="how-it-works">
+    <section id="how-it-works" className="how-it-works">
       <h2>How It Works</h2>
       <div className="terminal">
         <div className="terminal-header">
