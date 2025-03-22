@@ -11,7 +11,7 @@ interface LinkProps {
 
 const links: LinkProps[] = [
   { label: "Why", href: "#why" },
-  { label: "How It Works", href: "#" },
+  { label: "How It Works", href: "#how-it-works" },
   { label: "Products", href: "##" },
   { label: "", href: "https://github.com/marcoscannabrava/aibits", icon: githubIcon }
 ];

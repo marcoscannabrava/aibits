@@ -8,10 +8,12 @@
 
 .card {
     position: relative;
-    background-color: #03181D;
+    background-color: color-mix(in srgb, var(--midnight-green) 20%, transparent);
     border-radius: 2rem;
     padding: 2rem;
     width: 25%;
+    margin: 0;
+    min-height: 140px;
 }
 .card span {
     position: absolute;
@@ -44,7 +46,12 @@ li {
 }
 
 @media screen and (max-width: 768px) {
+    .why {
+        gap: 1rem;
+    }
+
     .card {
         width: 100%;
-    }   
+        min-height: 40px;
+    }
 }
