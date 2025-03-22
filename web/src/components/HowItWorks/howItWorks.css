@@ -90,11 +90,11 @@
   to { width: 100% }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {  
   .terminal {
+    padding: 1rem;
     width: 90%;
   }
-  
   .terminal-content {
     font-size: .6rem;
   }

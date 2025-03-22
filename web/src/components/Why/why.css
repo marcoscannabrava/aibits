@@ -8,7 +8,7 @@
 
 .card {
     position: relative;
-    background-color: #03181D;
+    background-color: color-mix(in srgb, var(--midnight-green) 20%, transparent);
     border-radius: 2rem;
     padding: 2rem;
     width: 25%;
