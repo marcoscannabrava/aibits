@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./howItWorks.css";
 
 const HowItWorks: React.FC = () => {
@@ -8,6 +8,15 @@ const HowItWorks: React.FC = () => {
     "lm --generate-image < summary.md",
     "curl example.com/img.jpg | cv --explain >> summary.md",
   ];
+
+  const [visibleIndex, setVisibleIndex] = useState(-1);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setVisibleIndex(prev => visibleIndex > commands.length - 1 ? 0 : prev + 1);
+    }, 2000); // Show next command every 4 seconds
+    return () => clearTimeout(timer);
+  }, [visibleIndex]);
 
   return (
     <section className="how-it-works">
@@ -19,11 +28,10 @@ const HowItWorks: React.FC = () => {
           <div className="terminal-button green"></div>
         </div>
         <div className="terminal-content">
-          <p className="prompt">$ </p>
-          {commands.map((cmd, index) => (
-            <div key={index} className="command-line typewriter">
-              <p className="command">{cmd}</p>
-            </div>
+          {commands.slice(0, visibleIndex + 1).map((cmd, index) => (
+            <p key={index} className="command-line typewriter">
+              {cmd}
+            </p>
           ))}
         </div>
       </div>

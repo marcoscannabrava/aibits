@@ -67,29 +67,21 @@
 }
 
 .command-line {
-  text-align: left;
+  margin: 0;
 }
-
-.command-line * {
-  margin: 0 auto;
-  line-height: 1rem;
-}
-
 .prompt {
+  margin: 0;
   display: inline-block;
   color: #64dd17;
   margin-right: 1rem;
 }
 
-.command {
-  color: white;
-}
-
-.typewriter .command {
+.typewriter {
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  animation: typing 3.5s steps(40, end);
+  animation: typing 3s ease-out forwards;
+  width: 0;
 }
 
 /* The typing effect */
