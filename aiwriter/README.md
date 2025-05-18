@@ -5,7 +5,11 @@
 # create a context.txt file with a list of URLs inside the `context` folder
 # see env.py for how to customize paths
 # only necessary ENV VAR is ANTHROPIC_API_KEY
+# for full agent loop
+UV_ENV_FILE=../.env uv run ../agent_loop.py "write an article on software engineering management extracting the absolute best insights from this text. be concise. you are a senior cracked software engineer whose reputation is widely admired online"
+
 UV_ENV_FILE=/path/to/.env uv run /path/to/writer.py "summarize all the context and list bullet points with your best insights"
+
 ```
 
 ### Data Model
