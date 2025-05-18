@@ -26,7 +26,7 @@ def cli():
     """Command line interface for the essay writer."""
     import sys
     import os
-    from env import CONTEXT_DIR, CONTEXT_FULL_FILE, RESPONSE_FILE
+    from env import CONTEXT_DIR, CONTEXT_FULL_FILE, ESSAY_FILE
     from context_builder import build_context
 
     if len(sys.argv) < 2:
@@ -42,14 +42,14 @@ def cli():
         context = build_context(prompt)
     
     try:
-        response_file = open(os.path.join(CONTEXT_DIR, RESPONSE_FILE), "r")
+        response_file = open(os.path.join(CONTEXT_DIR, ESSAY_FILE), "r")
         print("\n\nResponse file already exists, reading it...\n\n")
         essay = response_file.read()
         print(essay)
         return
     except FileNotFoundError:
         essay = write_essay(context)
-        open(RESPONSE_FILE, "w").write(str(essay))
+        open(ESSAY_FILE, "w").write(str(essay))
         print(essay)
 
 if __name__ == "__main__":
