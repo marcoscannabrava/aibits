@@ -2,9 +2,7 @@ import os
 import requests
 import subprocess
 from bs4 import BeautifulSoup
-
-CONTEXT_FILE = os.getenv("AIWRITER_CONTEXT_FILE", "context.txt")
-CONTEXT_DIR = os.getenv("AIWRITER_CONTEXT_DIR", "context")
+from env import CONTEXT_FILE, CONTEXT_FULL_FILE, CONTEXT_DIR
 
 
 def parse_url(url) -> str:
@@ -17,7 +15,7 @@ def parse_url(url) -> str:
     soup = BeautifulSoup(response.content, "html.parser")
     html = str(soup.prettify())
     md = pandoc_html2md(html)
-    save_to_file(url, md)
+    save_to_file(f"{url.split('/')[-1] or url.split('/')[-2]}.md", md)
     return md
 
 def pandoc_html2md(html: str) -> str:
@@ -31,18 +29,17 @@ def pandoc_html2md(html: str) -> str:
     return md
 
 
-def save_to_file(url, md):
+def save_to_file(filename, md):
     """This function saves the content to a file in the context directory
     if AIWRITER_CONTEXT_DIR env var is not set to empty."""
     if not CONTEXT_DIR:
         return
-    filename = f"{url.split('/')[-1] or url.split('/')[-2]}.md"
     os.makedirs(CONTEXT_DIR, exist_ok=True)
     filepath = os.path.join(CONTEXT_DIR, filename)
     open(filepath, "w").write(md)
 
 
-def context_builder(prompt):
+def build_context(prompt):
     """This function takes a prompt, reads a "context" file containing URLs
     and builds the full context for the AI writer."""
     SEPARATOR = "\n\n------------\n------------\n\n"
@@ -59,6 +56,7 @@ def context_builder(prompt):
             print(f"Error parsing URL {url}: {e}")
 
     context = f"{SEPARATOR}".join(context)
+    save_to_file(CONTEXT_FULL_FILE, context)
 
     return context + SEPARATOR + prompt
 
@@ -71,8 +69,15 @@ def cli():
         print("Usage: python context_builder.py <prompt>")
         sys.exit(1)
 
+    try:
+        context_file = open(os.path.join(CONTEXT_DIR, CONTEXT_FULL_FILE), "r")
+        print("\n\nContext file already exists, reading it...\n\n")
+        print(context_file.read())
+    except FileNotFoundError:
+        pass
+
     prompt = sys.argv[1]
-    context = context_builder(prompt)
+    context = build_context(prompt)
     print(context)
 
 if __name__ == "__main__":
