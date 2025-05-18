@@ -38,9 +38,8 @@ def cli():
     scores = rank_essay(essay, criteria)
     print(f"Scores:\n\n{scores}")
 
-    scores_file = open(SCORES_FILE, "w")
-    scores_file.write(str(scores))
-    scores_file.close()
+    with open(SCORES_FILE, "w") as scores_file:
+        scores_file.write(str(scores))
 
 if __name__ == "__main__":
     cli()

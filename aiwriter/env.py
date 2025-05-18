@@ -9,3 +9,5 @@ ESSAY_FILE = os.getenv("AIWRITER_ESSAY_FILE", "essay.txt")
 
 CRITERIA_FILE = os.getenv("AIWRITER_CRITERIA", "criteria.txt")
 SCORES_FILE = os.getenv("AIWRITER_SCORES", "scores.txt")
+
+DRAFTS_DIR = os.getenv("AIWRITER_DRAFTS_DIR", "drafts")
