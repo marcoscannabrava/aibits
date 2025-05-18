@@ -1,5 +1,13 @@
 # Agentic AI Writer
 
+### Get started
+``` sh
+# create a context.txt file with a list of URLs inside the `context` folder
+# see env.py for how to customize paths
+# only necessary ENV VAR is ANTHROPIC_API_KEY
+UV_ENV_FILE=/path/to/.env uv run /path/to/writer.py "summarize all the context and list bullet points with your best insights"
+```
+
 ### Data Model
 - Input
   - URLs
