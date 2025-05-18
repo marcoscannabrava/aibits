@@ -17,6 +17,7 @@
  * Example:
  *   html2md example.html > output.md
  *   cat example.html | html2md - > output.md
+ *   pbpaste | html2md - > output.md
  */
 
 #include <stdio.h>
