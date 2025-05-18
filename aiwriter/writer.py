@@ -19,7 +19,6 @@ def write_essay(prompt: str):
         messages=[{"role": "user", "content": prompt}],
         response_model=Essay,
     ))
-    print(f"Response:\n\n{response.title}\n\n{response.content[:100]}")
     return response
 
 def cli():
