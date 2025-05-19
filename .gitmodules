@@ -1,0 +1,3 @@
+[submodule "aiwriter"]
+	path = aiwriter
+	url = https://github.com/marcoscannabrava/aiwriter
