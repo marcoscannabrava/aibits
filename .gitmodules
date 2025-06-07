@@ -1,3 +1,6 @@
 [submodule "aiwriter"]
 	path = aiwriter
 	url = https://github.com/marcoscannabrava/aiwriter
+[submodule "aicoder"]
+	path = aicoder
+	url = git@github.com:marcoscannabrava/aicoder.git
